@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome to your learning dashboard</p>
+        </div>
+          <button>👤   Admin  User</button>
+    </header>
+
+    <div class="container">
+       <div class="item">
+     <span class="label">TOTAL USERS</span>
+     <span class="number">1,234</span>
+     <p class="p">Active accounts</p>
+       </div>
+
+       <div class="item">
+     <span class="label">REVENUE</span>
+     <span class="number">$45,678</span>
+     <p class="p">This month</p>
+       </div>
+
+       <div class="item">
+     <span class="label">ORDERS</span>
+     <span class="number">567</span>
+     <p>Pending delivery</p>
+       </div>
+
+       <div class="item">
+     <span class="label">GROWTH</span>
+     <span class="number">23%</span>
+     <p>last months</p>
+       </div>
+    </div>
+
+     <div class="table">
+  <table class="transactions">
+     <h2>Recent Transaction</h2>
+     <thead>
+      <tr>
+        <th>ID</th>
+        <th>Customer</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+   <tbody>
+
+  <tr data-payment="Credit Card" data-reference="REF-001-2024">
+    <td>001</td>
+    <td>Richard Trevin</td>
+    <td>$150.00</td>
+    <td>Active</td>
+    <td>2024-02-01</td>
+    <td>
+      <button class="action-btn view-btn">View</button>
+    </td>
+  </tr>
+  <tr data-payment="Debit Card" data-reference="REF-002-2024">
+    <td>002</td>
+    <td>Favour Okolosi</td>
+    <td>$28.00</td>
+    <td>Pending</td>
+    <td>2024-02-01</td>
+    <td>
+      <button class="action-btn view-btn">View</button>
+    </td>
+  </tr>
+  <tr data-payment="Bank Transfer" data-reference="REF-003-2024">
+    <td>003</td>
+    <td>Jibola Dappa</td>
+    <td>$95.00</td>
+    <td>Active</td>
+    <td>2024-02-02</td>
+    <td>
+      <button class="action-btn view-btn">View</button>
+    </td>
+  </tr>
+  <tr data-payment="opay" data-reference="REF-004-2024">
+    <td>004</td>
+    <td>Riamson Kuti</td>
+    <td>$1500.00</td>~
+    <td>Inactive</td>
+    <td>2024-03-03</td>
+    <td>
+      <button class="action-btn view-btn">View</button>
+    </td>
+  </tr>
+  <tr data-payment="Credit Card" data-reference="REF-005-2024">
+    <td>005</td>
+    <td>Ayodeji Ibrahim</td>
+    <td>$120.00</td>
+    <td>Active</td>
+    <td>2024-02-04</td>
+    <td>
+      <button class="action-btn view-btn">View</button>
+    </td>
+  </tr>
+  <tr data-payment="Bank Transfer" data-reference="REF-006-2024">
+    <td>006</td>
+    <td>Stazzy Pounds</td>
+    <td>$1500.00</td>
+    <td>Active</td>
+    <td>2024-02-05</td>
+    <td>
+      <button class="action-btn view-btn">View</button>
+    </td>
+  </tr>
+  <tr data-payment="Debit Card" data-reference="REF-007-2024">
+    <td>007</td>
+    <td>Jada Pallok</td>
+    <td>$170.00</td>
+    <td>Active</td>
+    <td>2024-02-07</td>
+    <td>
+      <button class="action-btn view-btn">View</button>
+    </td>
+  </tr>
+</tbody>
+  </table>
+  <button class="close1" id="addTransactionBtn">Add new Transaction</button>
+</div>
+
+<div id="detailsModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Transaction Details</h2>
+    <div class="details">
+      <p><strong>Transaction ID:</strong> <span id="modal-id"></span></p>
+      <p><strong>Customer:</strong> <span id="modal-name"></span></p>
+      <p><strong>Amount:</strong> <span id="modal-amount"></span></p>
+      <p><strong>Status:</strong> <span id="modal-status"></span></p>
+      <p><strong>Date:</strong> <span id="modal-date"></span></p>
+      <p><strong>Payment Method:</strong> <span id="modal-payment"></span></p>
+      <p><strong>Reference Number:</strong> <span id="modal-reference"></span></p>
+    </div>
+     <button class="close-btn">Close</button>
+  </div>
+</div>
+
+
+<div id="addModal" class="modal">
+  <div class="modal-content add-modal-content">
+    <span class="close-add">&times;</span>
+    <h2>Add New Transaction</h2>
+    <form id="addTransactionForm" class="add-form">
+      <div class="form-group">
+        <label for="new-id">Transaction ID:</label>
+        <input type="text" id="new-id" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="new-customer">Customer Name:</label>
+        <input type="text" id="new-customer" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="new-amount">Amount:</label>
+        <input type="text" id="new-amount" placeholder="$0.00" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="new-status">Status:</label>
+        <select id="new-status" required>
+          <option value="">Select Status</option>
+          <option value="Active">Active</option>
+          <option value="Pending">Pending</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="new-date">Date:</label>
+        <input type="date" id="new-date" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="new-payment">Payment Method:</label>
+        <select id="new-payment" required>
+          <option value="">Select Payment Method</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="PayPal">PayPal</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="new-reference">Reference Number:</label>
+        <input type="text" id="new-reference" required>
+      </div>
+      
+      <div class="form-buttons">
+        <button type="submit" class="submit-btn">Add Transaction</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+    <script src="index.js"></script>
+  </body>
+</html>
